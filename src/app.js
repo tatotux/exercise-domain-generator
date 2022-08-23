@@ -12,13 +12,15 @@ window.onload = function() {
 };
 
 let generateDomain = () => {
+  let domains = [];
   let pronoun = ["the", "our"];
   let adj = ["great", "big"];
   let noun = ["jogger", "racoon"];
+  pronoun.forEach(item =>
+    adj.forEach(item2 =>
+      noun.forEach(item3 => domains.push(item + item2 + item3 + ".com"))
+    )
+  );
 
-  let proIndx = Math.floor(Math.random() * pronoun.length);
-  let adjIndx = Math.floor(Math.random() * adj.length);
-  let nounIndx = Math.floor(Math.random() * noun.length);
-
-  return pronoun[proIndx] + adj[adjIndx] + noun[nounIndx] + ".com";
+  return domains;
 };
